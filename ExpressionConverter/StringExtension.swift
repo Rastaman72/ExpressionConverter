@@ -17,7 +17,10 @@ var mathOperator = ["^" : 4,
                     ")" : 1]
 
 extension String {
-    
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
+    }
+
     mutating func parentheses() {
         while (self.contains("(")) {
             var array = self.components(separatedBy: " ")
@@ -131,10 +134,10 @@ extension String {
         }) {
             
             // Infix
-                        let leftIndex = array.index(before: array.index(of: element)!)
-                        let valueLeft = array[leftIndex]
-                        let rightIndex = array.index(after: array.index(of: element)!)
-                        let valueRight = array[rightIndex]
+            let leftIndex = array.index(before: array.index(of: element)!)
+            let valueLeft = array[leftIndex]
+            let rightIndex = array.index(after: array.index(of: element)!)
+            let valueRight = array[rightIndex]
             
             
             //            Prefix
@@ -145,7 +148,7 @@ extension String {
             
             
             //            Postfix
-          //  let leftIndex = array.index(before: array.index(of: element)!) - 1
+            //  let leftIndex = array.index(before: array.index(of: element)!) - 1
             //let valueLeft = array[leftIndex]
             //let rightIndex = array.index(before: array.index(of: element)!)
             //let valueRight = array[rightIndex]

@@ -23,10 +23,8 @@ extension String {
                 
                 let testIndex = selfArray.index(of: element)
                 if testIndex!+2 < selfArray.count {
-                    
                     if !mathOperator.keys.contains(selfArray[testIndex! + 1]) {
                         if !mathOperator.keys.contains(selfArray[testIndex! + 2]) {
-                            
                             let rangeToRemove = testIndex!...testIndex!+1
                             selfArray.removeSubrange(rangeToRemove)
                             stackCounter += 1

@@ -27,9 +27,8 @@ class ViewController: UIViewController {
         let decimalRange = valueToConvertTextField.text?.rangeOfCharacter(from: decimalCharacters, options: String.CompareOptions.literal, range: nil)
         if decimalRange == nil {
             
-            
             var valueWithSpace = ""
-            if let text = valueToConvertTextField.text {
+            if let text = valueToConvertTextField.text?.removingWhitespaces() {
                 var valueToConvert = text
                 var arrayOfValuesToConvert = [String]()
                 
@@ -41,7 +40,6 @@ class ViewController: UIViewController {
             
             let isPrefix = valueWithSpace.isPrefix()
             let isPostfix = valueWithSpace.isPostfix()
-            
             let isInfix = valueWithSpace.isInfix()
             
             
@@ -135,4 +133,5 @@ class ViewController: UIViewController {
         infixLabel.text = infix
     }
 }
+
 
